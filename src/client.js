@@ -14,12 +14,10 @@ module.exports = async (url, fetchConfig = {}, authriteClientParams = {}) => {
   const firstResult = await authrite.request(url, fetchConfig)
   if (firstResult.status !== 402) return firstResult
   try {
-    console.log(firstResult.headers)
     const satoshis = parseInt(
       firstResult.headers
         .get('x-bsv-payment-satoshis-required')
     )
-    console.log(satoshis)
     const derivationPrefix = require('crypto')
       .randomBytes(10)
       .toString('base64')
