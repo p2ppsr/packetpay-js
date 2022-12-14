@@ -1,6 +1,6 @@
 const { Authrite } = require('authrite-js')
-import bsv from 'babbage-bsv'
-import { getPublicKey, createAction } from '@babbage/sdk'
+const bsv = require('babbage-bsv')
+const { getPublicKey, createAction } = require('@babbage/sdk')
 
 /**
  * @param {String} url The request URL
@@ -14,7 +14,12 @@ module.exports = async (url, fetchConfig = {}, authriteClientParams = {}) => {
   const firstResult = await authrite.request(url, fetchConfig)
   if (firstResult.status !== 402) return firstResult
   try {
-    const satoshis = firstResult.headers['x-bsv-payment-satoshis-requested']
+    console.log(firstResult.headers)
+    const satoshis = parseInt(
+      firstResult.headers
+        .get('x-bsv-payment-satoshis-required')
+    )
+    console.log(satoshis)
     const derivationPrefix = require('crypto')
       .randomBytes(10)
       .toString('base64')
@@ -24,7 +29,7 @@ module.exports = async (url, fetchConfig = {}, authriteClientParams = {}) => {
     const derivedPublicKey = await getPublicKey({
       protocolID: [2, '3241645161d8'],
       keyID: `${derivationPrefix} ${derivationSuffix}`,
-      counterparty: firstResult.headers['x-authrite-identity-key']
+      counterparty: firstResult.headers.get('x-authrite-identity-key')
     })
     const script = new bsv.Script(
       bsv.Script.fromAddress(bsv.Address.fromPublicKey(
