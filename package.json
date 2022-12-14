@@ -2,12 +2,15 @@
   "name": "@packetpay/js",
   "version": "0.1.2",
   "description": "A fetch client capable of paying for its requests",
-  "main": "src/client.js",
+  "main": "dist/client.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "doc": "documentation readme src/client.js -f md -s API",
-    "lint": "standard --fix ."
+    "lint": "standard --fix .",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,13 +26,16 @@
     "@babbage/sdk": "^0.4.17",
     "authrite-js": "^0.2.9",
     "babbage-bsv": "^0.1.0",
-    "node-fetch": "^2.6.0",
     "sendover": "^1.1.5"
   },
   "devDependencies": {
     "documentation": "^14.0.0",
-    "fetch-mock": "^9.11.0",
     "jest": "^28.0.3",
-    "standard": "^17.0.0"
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "standard": "^17.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2",
+    "webpack-merge": "^5.8.0"
   }
 }
