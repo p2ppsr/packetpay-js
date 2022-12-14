@@ -1,0 +1,34 @@
+{
+  "name": "@packetpay/js",
+  "version": "0.1.0",
+  "description": "A fetch client capable of paying for its requests",
+  "main": "src/client.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "doc": "documentation readme src/client.js -f md -s API",
+    "lint": "standard --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p2ppsr/packetpay-js.git"
+  },
+  "author": "Peer-to-peer Privacy Systems Research, LLC",
+  "license": "Open BSV License",
+  "bugs": {
+    "url": "https://github.com/p2ppsr/packetpay-js/issues"
+  },
+  "homepage": "https://github.com/p2ppsr/packetpay-js#readme",
+  "dependencies": {
+    "@babbage/sdk": "^0.4.13",
+    "babbage-bsv": "^0.1.0",
+    "node-fetch": "^2.6.0",
+    "sendover": "^1.1.5"
+  },
+  "devDependencies": {
+    "documentation": "^14.0.0",
+    "fetch-mock": "^9.11.0",
+    "jest": "^28.0.3",
+    "standard": "^17.0.0"
+  }
+}
