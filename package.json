@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/p2ppsr/packetpay-js#readme",
   "dependencies": {
-    "@babbage/sdk": "^0.4.17",
+    "@babbage/sdk": "^0.4.18",
     "authrite-js": "^0.2.9",
     "babbage-bsv": "^0.1.0",
     "sendover": "^1.1.5"
@@ -34,6 +34,7 @@
     "node-polyfill-webpack-plugin": "^1.1.4",
     "standard": "^17.0.0",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0"

@@ -1,4 +1,6 @@
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+const path = require('path')
+const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: './src/client.js',
@@ -13,7 +15,8 @@ module.exports = {
   plugins: [
     new NodePolyfillPlugin({
       includeAliases: ['crypto']
-    })
+    }),
+    new WebpackBundleAnalyzer()
   ],
   // module: {
   //   rules: [
@@ -30,6 +33,10 @@ module.exports = {
     "isomorphic-fetch": "isomorphic-fetch"
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      'bn.js': path.resolve(__dirname, 'node_modules/bn.js'),
+      'safe-buffer': path.resolve(__dirname, 'node_modules/safe-buffer')
+    }
   }
 }
