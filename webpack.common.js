@@ -1,6 +1,6 @@
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 const path = require('path')
-const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: './src/client.js',
@@ -15,8 +15,8 @@ module.exports = {
   plugins: [
     new NodePolyfillPlugin({
       includeAliases: ['crypto']
-    }),
-    new WebpackBundleAnalyzer()
+    })
+    // new WebpackBundleAnalyzer()
   ],
   // module: {
   //   rules: [
