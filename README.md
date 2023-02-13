@@ -43,7 +43,12 @@ const newsArticle = await PacketPay(
 
 *   `url` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The request URL
 *   `fetchConfig` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** The fetch configuration object (optional, default `{}`)
-*   `authriteClientParams` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** Constructor params for Authrite (optional, default `{}`)
+*   `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** PacketPay configuration object, optional of Babbage SDK is used (optional, default `{}`)
+
+    *   `config.authriteConfig` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** Constructor parameters for Authrite
+    *   `config.ninjaConfig` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** Constructor parameters for Ninja
+    *   `config.clientPrivateKey` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Client private key, used with both Authrite and Ninja if provided
+    *   `config.description` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Payment description, if a non-default description is desired
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>** Containing `status`, `headers` and `body`
 
