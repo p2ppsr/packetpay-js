@@ -12,18 +12,23 @@ const Ninja = require('utxoninja')
  * @param {Object} [config.ninjaConfig] Constructor parameters for Ninja
  * @param {String} [config.clientPrivateKey] Client private key, used with both Authrite and Ninja if provided
  * @param {String} [config.description] Payment description, if a non-default description is desired
- * 
+ *
  * @returns {Promise<Object>} Containing `status`, `headers` and `body`
  */
 module.exports = async (url, fetchConfig = {}, config = {}) => {
+  // Make sure the config objects are present when privateKey is included
   if (config.clientPrivateKey) {
-    if (config.authriteConfig) {
-      config.authriteConfig.clientPrivateKey = config.clientPrivateKey
+    if (!config.authriteConfig) {
+      config.authriteConfig = {}
     }
-    if (config.ninjaConfig) {
-      config.ninjaConfig.privateKey = config.clientPrivateKey
+    config.authriteConfig.clientPrivateKey = config.clientPrivateKey
+
+    if (!config.ninjaConfig) {
+      config.ninjaConfig = {}
     }
+    config.ninjaConfig.privateKey = config.clientPrivateKey
   }
+
   if (!config.description) {
     config.description = `Pay for ${url}`
   }
@@ -65,7 +70,7 @@ module.exports = async (url, fetchConfig = {}, config = {}) => {
       const ninja = new Ninja(config.ninjaConfig)
       payment = await ninja.getTransactionWithOutputs({
         outputs: [{ script, satoshis }],
-        note: config.description,
+        note: config.description
       })
     } else {
       payment = await createAction({
