@@ -51,7 +51,8 @@ module.exports = async (url, fetchConfig = {}, config = {}) => {
       derivedPublicKey = getPaymentAddress({
         invoiceNumber: `2-3241645161d8-${derivationPrefix} ${derivationSuffix}`,
         senderPrivateKey: config.clientPrivateKey,
-        recipientPublicKey: firstResult.headers.get('x-authrite-identity-key')
+        recipientPublicKey: firstResult.headers.get('x-authrite-identity-key'),
+        returnType: 'publicKey'
       })
     } else {
       derivedPublicKey = await getPublicKey({
