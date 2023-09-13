@@ -2,7 +2,7 @@ const { Authrite } = require('authrite-js')
 const bsv = require('babbage-bsv')
 const { getPublicKey, createAction } = require('@babbage/sdk')
 const { getPaymentAddress } = require('sendover')
-const Ninja = require('utxoninja')
+const { Ninja } = require('ninja-base')
 
 /**
  * @param {String} url The request URL
