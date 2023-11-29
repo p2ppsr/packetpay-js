@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/p2ppsr/packetpay-js#readme",
   "dependencies": {
-    "@babbage/sdk": "^0.4.19",
+    "@babbage/sdk": "^0.4.29",
     "authrite-js": "^0.3.2",
-    "babbage-bsv": "^0.1.0",
-    "ninja-base": "^0.2.24",
-    "sendover": "^1.1.5"
+    "babbage-bsv": "^0.2.2",
+    "ninja-base": "^0.2.87",
+    "sendover": "^1.1.16"
   },
   "devDependencies": {
     "documentation": "^14.0.0",
