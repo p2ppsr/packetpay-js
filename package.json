@@ -10,9 +10,7 @@
     "lint": "standard --fix .",
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "prepublishOnly": "npm run build",
-    "tonpm": "npm run tonone && npm i authrite-js @babbage/sdk babbage-bsv ninja-base sendover --silent",
-    "tonone": "npm remove authrite-js @babbage/sdk babbage-bsv ninja-base sendover cwi-base --silent"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
