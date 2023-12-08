@@ -2,7 +2,7 @@ const { Authrite } = require('authrite-js')
 const bsv = require('babbage-bsv')
 const { getPublicKey, createAction } = require('@babbage/sdk')
 const { getPaymentAddress } = require('sendover')
-const { Ninja } = require('ninja-base')
+const { Ninja, invoice3241645161d8 } = require('ninja-base')
 
 /**
  * @param {String} url The request URL
@@ -49,7 +49,7 @@ module.exports = async (url, fetchConfig = {}, config = {}) => {
     let derivedPublicKey
     if (config.clientPrivateKey) {
       derivedPublicKey = getPaymentAddress({
-        invoiceNumber: `2-3241645161d8-${derivationPrefix} ${derivationSuffix}`,
+        invoiceNumber: invoice3241645161d8(derivationPrefix, derivationSuffix),
         senderPrivateKey: config.clientPrivateKey,
         recipientPublicKey: firstResult.headers.get('x-authrite-identity-key'),
         returnType: 'publicKey'
