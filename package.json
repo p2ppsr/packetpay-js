@@ -37,7 +37,7 @@
     "@babbage/sdk": "^0.4.34",
     "authrite-js": "^0.3.21",
     "babbage-bsv": "^0.2.4",
-    "ninja-base": "^0.2.118",
+    "ninja-base": "^0.2.119",
     "sendover": "^1.2.4"
   }
 }
