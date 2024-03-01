@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@babbage/sdk": "^0.4.44",
-    "authrite-js": "^0.3.41",
+    "authrite-js": "^0.3.42",
     "babbage-bsv": "^0.2.4",
-    "ninja-base": "^0.2.143",
-    "sendover": "^1.2.20"
+    "ninja-base": "^0.2.144",
+    "sendover": "^1.2.21"
   }
 }
