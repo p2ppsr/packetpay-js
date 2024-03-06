@@ -1,6 +1,6 @@
 const { Authrite } = require('authrite-js')
 const bsv = require('babbage-bsv')
-const { getPublicKey, createAction } = require('@babbage/sdk')
+const { getPublicKey, createAction } = require('@babbage/sdk-ts')
 const { getPaymentAddress } = require('sendover')
 const { Ninja, invoice3241645161d8 } = require('ninja-base')
 
