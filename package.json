@@ -34,10 +34,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@babbage/sdk-ts": "^0.2.16",
-    "authrite-js": "^0.4.19",
+    "@babbage/sdk-ts": "^0.2.17",
+    "authrite-js": "^0.4.20",
     "babbage-bsv": "^0.2.4",
-    "ninja-base": "^0.3.25",
+    "ninja-base": "^0.3.26",
     "sendover": "^1.3.17"
   }
 }
