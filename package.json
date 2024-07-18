@@ -1,6 +1,6 @@
 {
   "name": "@packetpay/js",
-  "version": "0.2.32",
+  "version": "0.2.33",
   "description": "A fetch client capable of paying for its requests",
   "main": "src/client.js",
   "scripts": {
